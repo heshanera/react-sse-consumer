@@ -52,7 +52,7 @@ const eventConsumer = useSseConsumer(resourceUrl, options, eventHandlers, eventL
 ```ts
 import useSseConsumer, { EventHandlers, EventListeners } from 
 
-const resourceUrl = 'http://localhost:5000/notify';
+const resourceUrl = 'path/to/resource';
 const options: object = {};
 const eventHandlers: EventHandlers = {
   onerror: (event: Event) => { /* handle error */ },
@@ -64,7 +64,7 @@ const eventListeners: EventListeners = {
   ping: (messageEvent: MessageEvent) => { /* handle named event 'ping' */ },
 };
 
-const eventConsumer: EventSource | null = useSseConsumer(resourceUrl, options, eventHandlers, eventListeners);
+const consumer: EventSource | null = useSseConsumer(resourceUrl, options, eventHandlers, eventListeners);
 ```
 
 <br/>
@@ -73,6 +73,6 @@ const eventConsumer: EventSource | null = useSseConsumer(resourceUrl, options, e
 
 | Prop             | Type       | Description                                                                                                                                                                                             |
 | :--------------- | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| EventHandlers        | `object`   | Handlers for the consumer events <br /> <code>onerror</code>, <code>onopen</code>, <code>onmessage</code>                                                         |
-| EventListeners           | `object`  | Listeners for consuming names events <br /> <code>message</code>, <code>...</code>  |
+| EventHandlers        | `object`   | Handlers for the EventSource events <br /> <code>onerror</code>, <code>onopen</code>, <code>onmessage</code>                                                         |
+| EventListeners           | `object`  | Listeners for consuming named events <br /> <code>message</code>, <code>...</code>  |
 
