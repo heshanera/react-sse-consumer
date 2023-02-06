@@ -1,2 +1,2 @@
 # react-sse-consumer
-React hook for creating server sent events consumer
+React hook for Server Sent Events (SSE) consumer

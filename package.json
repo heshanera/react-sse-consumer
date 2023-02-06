@@ -1,14 +1,31 @@
 {
   "name": "react-sse-consumer",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "lint": "eslint --ignore-path .eslintignore --ext .js,.jsx,.ts,.tsx ."
+    "lint": "eslint --ignore-path .eslintignore --ext .js,.jsx,.ts,.tsx .",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release --branches master"
   },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/react-sse-consumer.es.js",
+      "require": "./dist/react-sse-consumer.umd.js"
+    }
+  },
+  "main": "./dist/react-sse-consumer.umd.js",
+  "module": "./dist/react-sse-consumer.es.js",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -19,6 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "@vitejs/plugin-react": "^3.0.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.6.0",
@@ -28,7 +46,21 @@
     "eslint-plugin-react": "^7.32.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^2.8.3",
+    "semantic-release": "^19.0.5",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": "16.8.0 || >=17.x",
+    "react-dom": "16.8.0 || >=17.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heshanera/react-sse-consumer.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
