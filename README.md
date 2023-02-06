@@ -1,5 +1,5 @@
 # react-sse-consumer
-React hook for consuming Server Sent Events (SSE). This is a warpper built around the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) API. Handle `EventSource` events and consume named events sent from the server.
+React hook for consuming Server Sent Events (SSE). This is a wrapper built around the [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/EventSource) API. Handle `EventSource` events and consume named events sent from the server.
 
 [![React](https://img.shields.io/badge/React-v18.2.0-%2361DBFB)](https://github.com/heshanera/react-sse-consumer) &nbsp;
 [![NPM](https://img.shields.io/badge/NPM-v8.19.2-%23CC3534)](https://github.com/heshanera/react-sse-consumer)&nbsp;
