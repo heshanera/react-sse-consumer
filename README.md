@@ -50,7 +50,7 @@ const eventConsumer = useSseConsumer(resourceUrl, options, eventHandlers, eventL
 
 ### Typescript
 ```ts
-import useSseConsumer, { EventHandlers, EventListeners } from 
+import useSseConsumer, { EventHandlers, EventListeners } from 'react-sse-consumer';
 
 const resourceUrl = 'path/to/resource';
 const options: object = {};
@@ -64,7 +64,12 @@ const eventListeners: EventListeners = {
   ping: (messageEvent: MessageEvent) => { /* handle named event 'ping' */ },
 };
 
-const consumer: EventSource | null = useSseConsumer(resourceUrl, options, eventHandlers, eventListeners);
+const eventConsumer: EventSource | null = useSseConsumer(
+  resourceUrl,
+  options,
+  eventHandlers,
+  eventListeners,
+);
 ```
 
 <br/>
