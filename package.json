@@ -26,6 +26,7 @@
   },
   "main": "./dist/react-sse-consumer.umd.js",
   "module": "./dist/react-sse-consumer.es.js",
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
