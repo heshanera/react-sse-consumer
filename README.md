@@ -50,7 +50,8 @@ const eventConsumer = useSseConsumer(resourceUrl, options, eventHandlers, eventL
 
 ### Typescript
 ```ts
-import useSseConsumer, { EventHandlers, EventListeners } from 'react-sse-consumer';
+import useSseConsumer from 'react-sse-consumer';
+import { EventHandlers, EventListeners } from 'react-sse-consumer/types';
 
 const resourceUrl = 'path/to/resource';
 const options: object = {};
