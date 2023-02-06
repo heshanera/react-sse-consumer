@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import useSseConsumer from './lib';
-import { EventHandlers, EventListeners } from './lib/types';
+import useSseConsumer, { EventHandlers, EventListeners } from './lib';
 
 const eventHandlers: EventHandlers = {
   onerror: (event: Event) => {
@@ -17,6 +16,9 @@ const eventHandlers: EventHandlers = {
 const App = () => {
   const [data, setData] = useState(null);
 
+  const resourceUrl = 'http://localhost:5000/notify';
+  const options: object = {};
+
   const eventListeners: EventListeners = {
     message: (messageEvent: MessageEvent) => {
       console.log('Received "message" event:', messageEvent);
@@ -28,12 +30,7 @@ const App = () => {
     },
   };
 
-  const testEventConsumer: EventSource | null = useSseConsumer(
-    `http://localhost:5000/notify`,
-    {},
-    eventHandlers,
-    eventListeners,
-  );
+  const testEventConsumer: EventSource | null = useSseConsumer(resourceUrl, options, eventHandlers, eventListeners);
 
   const handleClose = () => {
     testEventConsumer?.close();
