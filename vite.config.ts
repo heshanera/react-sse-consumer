@@ -12,13 +12,14 @@ export default defineConfig(() => ({
     react(),
     dts({
       entryRoot: 'src/lib',
-      outputDir: 'dist/types',
+      outputDir: 'dist',
+      insertTypesEntry: true,
     }),
   ],
   build: {
     lib: {
       entry: resolve('src', 'lib/index.ts'),
-      name: 'ReactSSEConsumer',
+      name: 'react-sse-consumer',
       formats: ['es', 'umd'],
       fileName: (format) => `react-sse-consumer.${format}.js`,
     },
